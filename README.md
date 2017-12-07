@@ -7,3 +7,6 @@
             alt="Valid CSS!" />
     </a>
 </p>
+
+http://jigsaw.w3.org/css-validator/validator$link
+http://jigsaw.w3.org/css-validator/check/referer
