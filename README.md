@@ -18,13 +18,6 @@
 
 <a href="https://imgur.com/11kKVak"><img src="https://i.imgur.com/11kKVak.png" title="source: imgur.com" /></a>
 
-
-
-
-
-
-
-
-
+<br>
 
 <a href="https://imgur.com/cvJbOtW"><img src="https://i.imgur.com/cvJbOtW.png" title="source: imgur.com" /></a>
