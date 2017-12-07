@@ -1,7 +1,8 @@
 # arboreal
 
-<h3>W3C HTML Validator</h3>
+<b>W3C HTML Validator output</b>
 <a href="https://imgur.com/buZ8HV2"><img src="https://i.imgur.com/buZ8HV2.png" title="source: imgur.com" /></a>
+<b>W3C CSS Validator output</b>
 <a href="https://imgur.com/11kKVak"><img src="https://i.imgur.com/11kKVak.png" title="source: imgur.com" /></a>
 <a href="https://imgur.com/cvJbOtW"><img src="https://i.imgur.com/cvJbOtW.png" title="source: imgur.com" /></a>
 
