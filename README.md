@@ -1,6 +1,6 @@
 # arboreal
 
-<b>W3C HTML Validator output:</b>
+<h3>W3C HTML Validator output:</h3>
 <br>
 <a href="https://imgur.com/buZ8HV2"><img src="https://i.imgur.com/buZ8HV2.png" title="source: imgur.com" /></a>
 <br>
