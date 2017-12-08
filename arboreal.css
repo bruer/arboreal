@@ -131,7 +131,7 @@ li a:hover {
 }
 
 .about, .themes, .pricing, .contact {
-	width: 100%;
+	width: 30rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -169,7 +169,6 @@ li a:hover {
 }
 
 .table {
-	width: 30rem;
 	display: flex;
 	justify-content: center;
 }
