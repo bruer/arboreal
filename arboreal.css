@@ -169,6 +169,7 @@ li a:hover {
 }
 
 .table {
+	width: 30rem;
 	display: flex;
 	justify-content: center;
 }
@@ -185,7 +186,8 @@ li a:hover {
 .table .cell {
 	border-bottom: .05rem solid;
 	margin: 0;
-	height: 5rem;
+	width: 10rem;
+	height: 7rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -194,7 +196,7 @@ li a:hover {
 .table .cell p {
 	width: 75%;
 	margin: 0;
-	font-size: .7rem;
+	font-size: .8rem;
 }
 
 /*.cell:first-child {
