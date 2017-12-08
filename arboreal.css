@@ -130,12 +130,12 @@ li a:hover {
 	color: darkorange;
 }
 
-.about, .themes, .pricing, .contact {
+section {
 	width: 30rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0rem 0 5rem;
+	padding-bottom: 5rem;
 }
 
 .about, .themes, .pricing {
