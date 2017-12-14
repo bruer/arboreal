@@ -8,8 +8,6 @@ Used the HTML parser.
 
 Total execution time 143 milliseconds.
 
-<a href="https://imgur.com/buZ8HV2"><img src="https://i.imgur.com/buZ8HV2.png" title="source: imgur.com" /></a>
-
 <p>
     <a href="https://imgur.com/buZ8HV2">
         <img src="https://i.imgur.com/buZ8HV2.png" title="source: imgur.com" />
