@@ -1,5 +1,17 @@
 # arboreal
 
+## feedback
+
+- **Layouten består av endast färger vilket gör att sidan ser tom ute; fler bilder kan liva upp utseendet.**
+    - "*dock skulle jag inte rekommendera att bara ha färger vilket gör att det ser ut ganska tom ut, pröva lägga lite bilder
+    på ex de 3 olika teman*"
+
+- **Svårt att läsa CSS-koden; kommentarer skulle behövas.**
+    - "*va lite svårt för mig att läsa igenom din css, sätt gärna kommentarer om vad som ändrar vad så att man vet vilken section man är på*"
+
+- **Sidan är inte responsiv; den skalar inte bra mot olika skärmstorlekar. Avsaknaden av flex-wrap i CSS-koden bidrar till detta.**
+    - "*du har glömt att använda flex wrap i alla ställen vilket kan göra sidan lite responsive ifall de hamnar utanför skärmen. Jag förstår att du försöker lösa detta med align-items: center men det skapar stor risk för andra skärmar*"
+
 ## W3C HTML Validator output:
 
 Document checking completed. No errors or warnings to show.
