@@ -27,14 +27,17 @@ Den andra kolumnen (till höger om navigationen) skulle bestå av sidans huvudin
 ## feedback
 
 - **Layouten består av endast färger vilket gör att sidan ser tom ute; fler bilder kan liva upp utseendet.**
+
 Som jag nämnde tidigare var det ett medvetet val att göra min sida så stilren och avskalad som det var möjligt, då jag var rädd att det skulle se plottrigt och ogenomtänkt ut med en massor av bilder. Jag saknar tidigare erfarenhet inom webbdesign och ville helt enkelt inte ge mig in på för djupt vatten. Självklart är det helt klart genomförbart att ha med t.ex. bilder och samtidigt ha ett en stilren layout i övrigt - men jag saknade helt enkelt den kunskap och tid det skulle krävas för att implementera detta på ett sätt jag var nöjd med.
 
 Mitt mål under arbetet var att lägga in passande bilder men väldigt mycket tid gick åt att bara få det lilla innehållet jag redan hade att fungera bra responsivt. Detta gjorde att jag tillslut övergav den ursprungliga planen.
 
 - **Svårt att läsa CSS-koden; kommentarer skulle behövas.**
+
 Detta håller jag med om till 100 procent då jag är en nybörjare på CSS. Jag har därför försökt att förklara CSS-dokumentet med kommentarer.
 
 - **Sidan är inte responsiv; den skalar inte bra mot olika skärmstorlekar. Avsaknaden av flex-wrap i CSS-koden bidrar till detta.**
+
 Detta var också helt sant och jag ägnade därför majoriteten av andra delen av arbetet åt att få sidan responsiv. Jag lyckades dock ofta lösa detta med andra metoder än med specifikt flex wrap (förutom vid ett tillfälle där jag ville få min tabell responsiv).
 
 ## W3C HTML Validator output:
