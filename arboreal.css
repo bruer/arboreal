@@ -1,284 +1,870 @@
 * {
 	box-sizing: border-box;
+}
+
+/*
+Gör texten skarpare och sätt radavståndet till 1.6 för hela sidan.
+*/
+html {
+	-webkit-font-smoothing: antialiased; 
+	line-height: 1.6;
+}
+
+/*
+Gör sidan flexibel och sätt riktningen så att innehållet staplas på varandra i 
+en kolumn.
+Sätt fonten på all text till sans-serif.
+*/
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
 	font-family: sans-serif;
 }
 
-html {
-	-webkit-font-smoothing: antialiased;
-	line-height: 1.6;
-	color: #444444;
-}
-
-body {
-	margin: 0;
-}
-
+/*
+Sätt gemensam färg på slogantexten, länkarna i nav-menyn och texten i footern.
+*/
 header em, nav a, footer {
 	color: khaki;
 }
 
-h1, h2, h3 {
-	line-height: 1.2;
+
+
+/***** HEADER *****/
+
+/*
+Headern har egenskapen att den följer med när man scrollar och denna div är 
+avsedd för att skapa ett utrymme högst upp på sidan där headerns startposition 
+ligger. 
+*/
+.top_header {
+	height: 11em;
 }
 
-h2, h3 {
-	text-transform: uppercase;
-}
-
-h2 {
-	padding: 9rem 0 5rem 3rem;
-	font-size: 2rem;
-	letter-spacing: 2.5rem;
-}
-
-h3 {
-	text-align: center;
-	font-size: 1rem;
-	letter-spacing: .2rem;
-}
-
-main {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 0 3rem;
-	background-color: thistle;
-}
-
-main p {
-	color: #666666;
-}
-
-.top_space {
-	height: 10rem;
-}
-
+/*
+Sätt headerns position som fixerad, alltså att den följer med när man scrollar 
+sidan.
+Gör så att logotypen och företagsnamnet hamnar på varsin ände av headern och 
+centrera dessa på längden.
+Sätt headerns färg och gör den en aning genomskinlig.
+*/
 header {
 	width: 100%;
-	height: 10rem;
+	height: 11em;
+	position: fixed;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: darkseagreen;
-	position: fixed;
-
+	background-color: rgba(143, 188, 143, 0.75);
 }
 
+/*
+Sätt storleken på logotypen.
+*/
 header img {
-	margin-right: 1rem;
-	width: 8rem;
-	height: 8rem;
+	margin-left: 0em;
+	width: 10em;
+	height: 10em;
 }
 
-header .logo {
-	margin-left: 1rem;
-
+/*
+Sätt storlek på området för företagsnamnet och deras slogan.
+Positionera texten.
+*/
+header .name_slogan {
+	width: 34em;
+	margin-right: 1em;
+	text-align: justify;
 }
 
+/*
+Postionera slogantexten så att orden tar upp hela bredden på sitt 
+förälderelement.
+*/
+header .name_slogan:after {
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+
+/*
+Företagsnamnet. Skapa utrymme mellan varje bokstav.
+*/
 header h1 {
+	width: 100%;
 	margin: 0;
-	font-size: 5rem;
-	letter-spacing: 1rem;
+	font-size: 6em;
+	letter-spacing: .25em;
 	color: green;
-
 }
 
+/*
+Slogantexten.
+*/
 header em {
-	font-size: .8rem;
-	letter-spacing: .185rem;
-	margin-bottom: 2rem;
+	font-size: .8em;
+	letter-spacing: .2em;
 }
 
-.wrapper {
+
+
+/***** NAVIGATION *****/
+
+/*
+Gör så att navigationsmenyn och huvudinnehållet hamnar bredvid varandra på en 
+rad.
+*/
+.nav_main_wrapper {
 	display: flex;
 }
 
+/*
+Sätt navigationen till en konstant bredd och centrera länkarna med hjälp av 
+flex och padding.
+*/
 nav {
-	width: 10rem;
+	flex: 0 0 10em;
 	display: flex;
 	justify-content: center;
+	padding-top: 9em;
 	background-color: teal;
 }
 
+
+/*
+Ta bort default-stilen på listan med navigationens länkar och gör så att de 
+följer med när man scrollar.
+*/
 nav ul {
-	width: 20%;
-	height: 70%;
-	margin: 0;
-	padding: 0;
-	position: fixed;
 	list-style-type: none;
+	padding: 0;
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	position: fixed;
+
 }
 
-li a {
-	width: 100%;
-	display: block;
+/*
+Skapa utrymme mellan länkarna. 
+*/
+nav li {
+	padding: 1em;
+}
+
+
+/*
+Ta bort default-stilen från länkarna och sätt den effekt som ska ske när man för 
+muspekaren över dem.
+*/
+nav a {
 	text-decoration: none;
-	padding: .5rem 0;
-	margin: 1rem 0;
+	font-size: .8em;
 	transition: font-size 0.3s;
 	transition-timing-function: ease-out;
-	font-size: .8rem;
 }
 
-li a:hover {
-	font-size: 1.3rem;
+/*
+Ändra på storlek och färg på länkarna när man för muspekaren över dem.
+*/
+nav a:hover {
+	font-size: .9em;
+	text-transform: uppercase;
 	color: darkorange;
 }
 
-section {
-	width: 30rem;
+
+
+/***** MAIN *****/
+
+/*
+Gör så att huvudinnehållet tar upp övrigt tillgängligt utrymme på bredden och
+att innehållet staplas på varandra i en vertikal riktning.
+*/
+main {
+	flex: 1;
+	padding: 0 3em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-bottom: 5rem;
+	background-color: lightcoral;
 }
 
-.about, .themes, .pricing {
-	border-bottom: .1rem outset;
+/*
+Sätt en maxbredd och fontstorlek på de olika avdelningar som beskriver 
+företagets verksamhet.
+*/
+section {
+	max-width: 50em;
+	font-size: 1.3em;
+	padding-bottom: 5em;
 }
 
-.themes, .about {
-	font-size: 1rem;
-	text-align: justify;
-	line-height: 1.5;
+/*
+Markera när avdelningarna tar slut med en linje för att förtydliga struktern på
+innehållet.
+*/
+.about, .themes, .price {
+	border-bottom: .1em outset;
 }
 
-.about, .pricing {
+.about, .price {
 	text-align: center;
 }
 
-.about h2 {
-	padding-bottom: 2.5rem;
+
+
+/***** ABOUT *****/
+
+/*
+Centrera företagsbeskrivningen i About-avdelningen.
+*/
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
 }
 
 .about p {
+	line-height: 2;
 	width: 55%;
 }
 
-.themes .wrapper {
-	display: flex;
-	flex-direction: column;
-}
+
+
+/***** THEMES *****/
+
+/*
+Se till att underrubrikerna i Themes-avdelningen är vänsterjusterade.
+*/
 .themes h3 {
 	text-align: left;
 }
 
+.themes p {
+	text-align: justify;
+	line-height: 1.5;
+	margin-bottom: 3em;
+}
+
+
+
+/***** PRICING *****/
+
+/*
+Centrera tabellen och se till att en kolumn hamnar på en ny rad om tabellen 
+hamnar utanför sidans marginaler.
+*/
 .table {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 }
 
+/*
+Markera höger sida av varje kolumn med en kantlinje för att skapa ett rutnät av
+tabellens innehåll.
+*/
 .table .column {
-	border-right: .05rem solid;
+	border-right: .05em solid;
 }
 
 .table .title {
-	border-bottom: .05rem solid;
-	padding-bottom: 1rem;
+	padding-bottom: 1em;
 }
 
+/*
+Sätt storlek på tabellens rutor, centrera dess innehåll och markera den nedre 
+kantlinjen av varje ruta.
+*/
 .table .cell {
-	border-bottom: .05rem solid;
-	margin: 0;
-	width: 10rem;
-	height: 7rem;
+	width: 8em;
+	height: 7em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-bottom: .05em solid;
+	margin: 0;
 }
 
+/*
+Justrera positionen av informationen i varje ruta.
+*/
 .table .cell p {
 	width: 75%;
+	padding: 0;
 	margin: 0;
-	font-size: .8rem;
+	font-size: .8em;
 }
 
-/*.cell:first-child {
-	border-top: .05rem solid;
-}*/
+/*
+Markera den övre kantlinjen på den andra raden av rutor.
+*/
+.table .cell:nth-child(2) {
+	border-top: .05em solid
+}
 
+/*
+Ta bort tabellens högra och nedre kantlinje.
+*/
 .table .column:last-child, .table .cell:last-child {
 	border: 0;
 }
 
-.contact .wrapper {
+
+
+/***** CONTACT *****/
+
+/*
+Sätt konaktformuläret och listan med företagets kontaktuppgifter på varsin sida 
+av Contact-avdelningen.
+*/
+.contact_wrapper {
 	display: flex;
 	justify-content: space-between;
-	font-size: .8rem;
+	font-size: .8em;
 }
 
+/*
+Sätt kontaktformulärets basbredd.
+*/
 .contact .customer {
-	flex: 0 0 14rem;
+	flex: 0 0 18em;
 }
 
+/*
+Strukturera formuläret så att fälten staplas på varandra.
+*/
 .contact .customer form {
 	display: flex;
 	flex-direction: column;
-	margin-top: 1rem;
+	margin-top: 1em;
 }
 
+/*
+Skapa marginaler kring fältens titlar.
+*/
 .contact .customer label {
-	margin: .8rem 0 .5rem;
+	margin: .8em 0 .5em;
 }
 
+/*
+Sätt en ram och färg för varje fält i formuläret.
+*/
+#name, #phone, #email, #company, #message {
+	border: .1em solid green;
+	background-color: floralwhite;
+}
+
+/*
+Sätt stilen på formulärets submit-knapp.
+*/
+.contact .submit {
+	border: solid;
+	padding: .5em;
+	background-color: teal;
+	color: khaki;
+	text-transform: uppercase;
+	letter-spacing: .5em;
+}
+
+/*
+Centrera och sätt basbredden för listan med företagets kontaktuppgifter.
+*/
 .contact .company {
-	flex: 0 0 14rem;
+	flex: 0 0 18em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 .contact .company ul {
-	width: 12rem;
+	width: 15em;
 	margin: 0;
 }
 
 .contact .company li {
-	padding: .5rem;
+	padding: .5em;
 }
 
-#name, #phone, #email, #company, #message {
-	border: .05rem solid green;
-	background-color: floralwhite;
-}
 
-.contact .submit {
-	border: solid;
-	padding: .5rem;
-	background-color: teal;
-	color: khaki;
-	text-transform: uppercase;
-	letter-spacing: .5rem;
-}
 
+/***** FOOTER *****/
+
+/*
+Sätt logotypen och företagsnamnet med slogan på varsin sida av footern (likt
+headern).
+*/
 footer {
-	height: 5rem;
+	height: 5em;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: darkgreen;
 }
 
-footer img {
-	width: 3rem;
-	height: 3rem;
-	margin-right: 1rem;
+footer .name_slogan {
+	margin-left: 1em;
 }
 
-footer .logo {
-	margin-left: 1rem;
-}
-
+/*
+Företagsnamnet
+*/
 footer strong {
-	font-size: 1.2rem;
-	letter-spacing: .2rem;
+	font-size: 1.2em;
+	letter-spacing: .2em;
 }
 
+
+/*
+Slogan
+*/
 footer em {
-	font-size: .7rem;
+	font-size: .7em;
+}
+
+
+/*
+Logotyp
+*/
+footer img {
+	width: 3em;
+	height: 3em;
+	margin-right: 1em;
+}
+
+
+
+/***** RUBRIKER *****/
+
+/*
+Sätt radavstånd för sidans rubriker.
+*/
+h1, h2, h3 {
+	line-height: 1.2;
+}
+
+
+/*
+Centrera och sätt rubriker på nivå 2 och 3 till stora bokstäver.
+*/
+h2, h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*
+Sätt rubriken som inleder varje avdelning till att ha extra mycket padding 
+uppåt - detta för att den fixerade headern ska hamna ovanför rubrikerna 
+(istället för mitt på och därmed dölja rubriken) när man klickar på länkarna 
+till de olika avdelningarna.
+*/
+h2 {
+	padding: 2.5em 0 2em 1em;
+	font-size: 3em;
+	letter-spacing: 1em;
+}
+
+h3 {
+	font-size: 1em;
+	letter-spacing: .2em;
+}
+
+
+
+/***** BREAKPOINTS *****/
+
+
+
+/***** 1200PX *****/
+
+@media screen and (max-width: 1200px) {
+
+	/*
+	Förminska rubriker på nivå 2 något.
+	*/
+	h2 {
+		font-size: 2.5em;
+	}
+}
+
+
+
+/***** 960PX *****/
+
+@media screen and (max-width: 960px) {
+
+	/*
+	Gör texten i Contact-avdelningen mindre för att undvika att innehållet
+	hamnar utanför sidans marginaler innan nästa brytpunkt.
+	*/
+	.contact_wrapper {
+		font-size: .7em;
+	}
+
+	/*
+	Gör rubriker på nivå 2 mindre och anpassa den övre paddingen till de nya 
+	dimensionerna på sidan, för att hamna rätt när man trycker på länkarna i 
+	menyn.
+	*/
+	h2 {
+		font-size: 1.8em;
+		padding-top: 4.5em;
+	}
+
+	/*
+	Minska på texten i varje avdelning med 10%.
+	*/
+	section {
+		font-size: 120%;
+	}
+}
+
+
+
+/***** 720PX *****/
+
+@media screen and (max-width: 720px) {
+
+	/*
+	Istället för vara uppdelad på varsin sida, blir headerns innehåll centrerad.
+	*/
+	header {
+		justify-content: center;
+	}
+
+	header .name_slogan {
+		width: 20em;
+	}
+
+	/*
+	Förminska företagsnamnet.
+	*/
+	header h1 {
+		font-size: 4.3em;
+		letter-spacing: .1em;
+	}
+
+	/*
+	Förminska slogantexten.
+	*/
+	header em {
+		font-size: .7em;
+		letter-spacing: .1em;
+	}
+
+	/*
+	Ändrar utseende och position på navigationsmenyn - istället för att ligga
+	till vänster som en kolumn ligger den under headern som en rad. Menyn
+	följer fortfarande med när man scrollar.
+	*/
+	nav {
+		width: 100%;
+		height: 3em;
+		position: fixed;
+		align-items: center;
+		padding: 0;
+	}
+
+	/*
+	Centrera länkarna i navigationen.
+	*/
+	nav ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
+
+	nav li {
+		margin: .5em;
+	}
+
+	/*
+	Förminska paddingen till vänster och höger på sidans huvudinnehåll.
+	*/
+	main {
+		padding: 0 1em;
+	}
+
+	/*
+	Anpassa den övre paddingen till de nya dimensionerna på sidan, för att hamna 
+	rätt när man trycker på länkarna i menyn.
+	*/
+	h2 {
+		padding-top: 7em;
+	}
+
+	/*
+	Minska på texten i varje avdelning med ytterligare 10%.
+	*/
+	section {
+		font-size: 100%;
+	}
+}
+
+
+
+/***** 480PX *****/
+
+@media screen and (max-width: 480px) {
+
+	/*
+	Gör startutrymmet för headern lite större. 
+	*/
+	.top_header {
+		height: 12em;
+	}
+
+	/*
+	Gör headern högre för att lämna plats åt dess innehåll som hamnar ovanpå 
+	varandra istället för bredvid som tidigare. Detta för att anpassa sig efter 
+	det smalare utrymmet.
+	*/
+	header {
+		height: 12em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	/*
+	Minska storleken på logotypen,
+	*/
+	header img {
+		width: 4em;	
+		height: 4em;
+		margin-top: 2em;
+	}
+
+	/*
+	Liksom innehållet i headern hamnar kontaktformuläret och kontaktuppgifterna 
+	i en kolumn istället för på rad, för att anpassa sig efter den trängre 
+	bredden.
+	*/
+	.contact_wrapper {
+		flex-direction: column;
+		align-items: center;
+		font-size: 1em;
+	}
+
+	/*
+	Öka avståndet mellan formuläret och kontaktuppgifterna.
+	*/
+	.company {
+		margin-top: 2.5em;
+	}
+
+	header .name_slogan {
+		margin: 0;
+	}
+
+	/*
+	Slogantexten hamnar under företagsnamnet (istället för bredvid) i footern. 
+	*/
+	footer .name_slogan {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/*
+	Gör rubriker mindre.
+	*/
+	h2 {
+		font-size: 1.2em;
+		padding-top: 16em;
+	}
+
+	h3 {
+		font-size: .8em;
+	}
+
+	/*
+	Minska på texten i avdelningarna med 25%.
+	*/
+	section {
+		font-size: 75%;
+	}
+}
+
+
+
+/***** 320PX *****/
+
+@media screen and (max-width: 320px) {
+
+	/*
+	Anpassa startutrymmet för headern efter den nya storleken.
+	*/
+	.top_header {
+		height: 9em;
+	}
+
+	/*
+	Anpassa storleken på texten i headern efter den smalare bredden.
+	*/
+	header {
+		font-size: 75%;
+	}
+
+	/*
+	Positionera slogantexten.
+	*/
+	header .name_slogan {
+		text-align: center;
+	}
+
+	header em {
+		letter-spacing: 0;
+		font-size: .9em;
+	}
+
+	/*
+	Minska på avståndet mellan länkarna i menyn.
+	*/
+	nav li {
+		padding: 0;
+	}
+
+	/*
+	Låt textstycket i About-avdelningen ta upp mer bredd. 
+	*/
+	.about p {
+		width: 75%;
+	}
+
+	/*
+	Ta bort den högra kantlinjen från den mittersta kolumnen i tabellen, då 
+	nästa kolumn som tidigare låg bredvid till höger numera har hamnat på en ny
+	rad med hjälp av flex wrap.
+	*/
+	.table .column:nth-child(2) {
+		border: none;
+	}
+
+	/*
+	Snygga till tabellen genom att ta bort överflödiga kantlinjer.
+	*/
+	.table .cell:nth-child(4), .table .cell:nth-child(5) {
+		border: none;
+	}
+
+	/*
+	Offra slogantexten för att skapa mer luft i footern.
+	*/
+	footer em {
+		display: none;
+	}
+
+	/*
+	Anpassa den övre paddingen till de nya dimensionerna på sidan, för att hamna 
+	rätt när man trycker på länkarna i menyn.
+	*/
+	h2 {
+		padding-top: 12.5em;
+	}
+}
+
+
+
+/***** 240PX *****/
+
+@media screen and (max-width: 240px) {
+
+	/*
+	Ta bort företagsnamnet för att lämna plats åt logotypen.
+	*/
+	header .name_slogan {
+		display: none;
+	}
+
+	/*
+	Öka storleken på logotypen.
+	*/
+	header img {
+		width: 7em;
+		height: 7em;
+	}
+
+	/*
+	Förminska länkarna i menyn.
+	*/
+	nav li {
+		font-size: .8em;
+		margin: .2em;
+	}
+
+	/*
+	Låt textstycket i About-avdelningen ta upp hela bredden.
+	*/
+	.about p {
+		width: 100%;
+	}
+
+	/*
+	Dela upp tabellen i rader istället för kolumner.
+	*/
+	.table {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/*
+	Ta bort kvarvarande kantlinjer för kolumnerna.
+	*/
+	.table .column {
+		border: none;
+	}
+
+	.contact_wrapper {
+		font-size: .7em;
+	}
+
+	/*
+	Minska bredden på formuläret.
+	*/
+	.contact .customer {
+		width: 19em;
+	}
+
+	/*
+	Justrera punkterna i listan med kontaktuppgifter.
+	*/
+	.contact ul {
+		padding-left: 2em;
+	}
+
+	/*
+	Placera logotypen i mitten av footern.
+	*/
+	footer {
+		justify-content: center;
+	}
+
+	/*
+	Ta bort företagsnamnet för att lämna plats åt logotypen (som i headern).
+	*/
+	footer .name_slogan {
+		display: none;
+	}
+
+	footer img {
+		margin: 0;
+	}
+
+	/*
+	Gör rubriker på nivå 2 mindre och anpassa den övre paddingen till de nya 
+	dimensionerna på sidan, för att hamna rätt när man trycker på länkarna i 
+	menyn.
+	*/
+	h2 {
+		font-size: 1em;
+		padding-top: 20em;
+	}
+
+	/*
+	Minska på texten i avdelningarna med 15%.
+	*/
+	section {
+		font-size: 60%;
+	}
 }
